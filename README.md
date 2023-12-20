@@ -74,7 +74,7 @@ A CRON job pings the SWAPI API at regular intervals to keep the data up-to-date.
 
 ## Usage
 
-curl "http://localhost:3000/people?limit=10&offset=0&search=Luke&sortBy=name&orderBy=asc"
+curl "http://localhost:3000/api/people?limit=10&offset=0&search=Luke&sortBy=name&orderBy=asc"
 
 ## Project Structure
 
