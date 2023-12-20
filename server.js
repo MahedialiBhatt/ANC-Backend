@@ -1,12 +1,15 @@
 const express = require("express");
 const swapiRouter = require("./routes/swapi");
 const { fetchAndCacheAllData } = require("./models/swapiModel");
+const { swapiCron } = require("./scripts/pingSwapi");
 
 require("dotenv").config();
 
 const app = express();
 
 const port = process.env.PORT || 3000;
+
+swapiCron();
 
 // endpoints
 app.use("/api", swapiRouter);
