@@ -1,12 +1,13 @@
 const axios = require("axios");
 const NodeCache = require("node-cache");
+const { SWAPI_CACHE_ALL_PEOPLE_DATA } = require("../utils/constant");
 
 const apiCache = new NodeCache({ stdTTL: 600 }); // Cache TTL set to 10 minutes
 
 async function fetchAndCacheAllData() {
   const allData = [];
 
-  const allCachedData = apiCache.get("swapi_all_data");
+  const allCachedData = apiCache.get(SWAPI_CACHE_ALL_PEOPLE_DATA);
 
   if (allCachedData) {
     return allCachedData;
@@ -26,7 +27,7 @@ async function fetchAndCacheAllData() {
     throw new Error("SWAPI API server error");
   }
 
-  apiCache.set("swapi_all_data", allData);
+  apiCache.set(SWAPI_CACHE_ALL_PEOPLE_DATA, allData);
 
   console.log(
     "SWAPI People data successfully loaded! May the Force be with you!"

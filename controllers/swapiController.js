@@ -20,7 +20,7 @@ async function people(req, res) {
 
   const allData = await fetchAndCacheAllData();
 
-  const cacheKey = `people_data_id_${peopleIdx}`;
+  const cacheKey = `PEOPLE_DATA_ID_${peopleIdx}`;
 
   // Check if the data is already cached
   let cachedData = apiCache.get(cacheKey);
@@ -40,7 +40,7 @@ async function fetchPeople(req, res) {
   try {
     const allData = await fetchAndCacheAllData();
 
-    const cacheKey = `people_data_${JSON.stringify(req.query)}`;
+    const cacheKey = `PEOPLE_DATA_${JSON.stringify(req.query)}`;
 
     // Check if the data is already cached
     let cachedData = apiCache.get(cacheKey);
