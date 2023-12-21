@@ -49,7 +49,7 @@ The API supports searching for people based on their name.
 
 ### Sort
 
-You can sort the results based on different attributes such as name, gender, height, mass, etc.
+You can sort the results based on different attributes such as name, gender, height, mass, etc. Using sortBy and orderBy(asc/desc).
 
 ### Pagination
 
