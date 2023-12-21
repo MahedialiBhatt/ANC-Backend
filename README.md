@@ -1,4 +1,4 @@
-# Galactic API - High School Students Project
+# SWAPI API - ANC Backend Project
 
 ## Table of Contents
 
