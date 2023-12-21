@@ -1,6 +1,6 @@
 const express = require("express");
 const swapiRouter = require("./routes/swapi");
-const { fetchAndCacheAllData } = require("./models/swapiModel");
+// const { fetchAndCacheAllData } = require("./models/swapiModel");
 const { swapiCron } = require("./scripts/pingSwapi");
 
 require("dotenv").config();
@@ -18,5 +18,6 @@ app.use("/*", (req, res) => res.send("OK!!!"));
 
 app.listen(port, async () => {
   console.log(`Server is running on port ${port}`);
-  await fetchAndCacheAllData().catch((e) => {});
+  // Uncomment it, if we disable cronjob
+  // await fetchAndCacheAllData().catch((e) => {});
 });
